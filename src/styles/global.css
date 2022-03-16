@@ -1,0 +1,15 @@
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper,
+#gatsby-focus-wrapper > div {
+  height: 100%;
+  font-family: 'Baskerville', serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Language: css */
+/* Path: src/styles/global.css */

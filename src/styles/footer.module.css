@@ -1,0 +1,27 @@
+.footer {
+  /* background: left/ contain url('../assets/lady.png') no-repeat; */
+  /* height: 200vh; */
+  /* background-image: linear-gradient(
+    15deg,
+    #5a0f39 70%,
+    #cc8434 70% 72%,
+    rgba(255, 255, 255, 0) 72%
+  ); */
+  position: relative;
+  /* margin-top: -20%; */
+  z-index: 100;
+  border: 1px solid red;
+  /* url("../assets/lady.png"); */
+}
+
+@media screen and (max-width: 1115px) {
+  .footer {
+    margin-top: -29%;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .footer {
+    margin-top: -31%;
+  }
+}
