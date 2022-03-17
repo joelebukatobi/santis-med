@@ -2,9 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '@/components/layout';
 import FinalCall from '@/components/final-call';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 export default function TeamMember(props) {
-  console.log(props);
   return (
     <Layout>
       <div className="bg-white">

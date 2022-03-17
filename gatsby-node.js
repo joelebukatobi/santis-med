@@ -24,8 +24,6 @@ exports.sourceNodes = async ({ actions, createNodeId }) => {
   );
   const res = await teamMembers.json();
 
-  console.log(res);
-
   res.data.map((team, i) => {
     const userNode = {
       id: createNodeId(`PAGE-${team.id}`),

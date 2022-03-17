@@ -93,25 +93,4 @@ export const query = graphql`
   }
 `;
 
-// export const query = graphql`
-//   query TeamQuery {
-//     allTeamJson {
-//       edges {
-//         node {
-//           id
-//           name
-//           role
-//           department
-//           qualifications
-//           image {
-//             childImageSharp {
-//               gatsbyImageData
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
-
 export default Team;
