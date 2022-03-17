@@ -32,7 +32,7 @@ export default function TeamMember(props) {
 }
 
 export const query = graphql`
-  query TeamMemberQuery($id: String!) {
+  query TeamMemberQuery($id: String) {
     team(id: { eq: $id }) {
       id
       name
@@ -43,3 +43,20 @@ export const query = graphql`
     }
   }
 `;
+
+// export const query = graphql`
+//   query TeamQuery {
+//     allTeam {
+//       edges {
+//         node {
+//           id
+//           name
+//           title
+//           suffix
+//           about
+//           image
+//         }
+//       }
+//     }
+//   }
+// `;
