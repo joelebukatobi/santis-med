@@ -20,12 +20,12 @@ function ConceptSection() {
         </div>
 
         <div className="flex items-center justify-center w-full gap-6 mt-10 overflow-auto md:gap-24">
-          <StaticImage
+          {/* <StaticImage
             objectFit="contain"
             className="flex-shrink-0 w-40"
             alt=""
             src="../assets/pathcare.png"
-          />
+          /> */}
           <StaticImage
             objectFit="contain"
             className="flex-shrink-0 w-40"

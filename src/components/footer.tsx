@@ -57,49 +57,49 @@ const FOOTER_LINKS = [
     ],
   },
   {
-    heading: 'Services',
+    heading: 'Packages',
     links: [
       {
-        label: 'About',
-        href: '/about',
+        label: 'Aspen',
+        href: '/packages',
       },
       {
-        label: 'Team',
-        href: '/team',
+        label: 'Olympus',
+        href: '/packages',
       },
       {
-        label: 'Services',
-        href: '/#services',
+        label: 'Everest',
+        href: '/packages',
       },
 
       {
-        label: 'Packages',
+        label: 'Everest Plus',
         href: '/packages',
       },
     ],
   },
-  {
-    heading: 'Core Values',
-    links: [
-      {
-        label: 'About',
-        href: '/about',
-      },
-      {
-        label: 'Team',
-        href: '/team',
-      },
-      {
-        label: 'Services',
-        href: '/#services',
-      },
+  // {
+  //   heading: 'Core Values',
+  //   links: [
+  //     {
+  //       label: 'About',
+  //       href: '/about',
+  //     },
+  //     {
+  //       label: 'Team',
+  //       href: '/team',
+  //     },
+  //     {
+  //       label: 'Services',
+  //       href: '/#services',
+  //     },
 
-      {
-        label: 'Packages',
-        href: '/packages',
-      },
-    ],
-  },
+  //     {
+  //       label: 'Packages',
+  //       href: '/packages',
+  //     },
+  //   ],
+  // },
 ];
 
 const NAV_LINKS = [
@@ -401,10 +401,11 @@ const Footer = () => {
                       <h4 className="flex items-center gap-4 my-4 text-sm text-santis-gold">
                         <Icon Icon={Mail} /> <p>Email Us</p>
                       </h4>
-                      <p className="text-white">
+                      <p className="text-white flex flex-col">
                         <a href="mailto:admin@santimed.com">
-                          admin@santimed.com
+                          hello@santimed.com
                         </a>
+                        <a href="https://santismed.com">www.santismed.com</a>
                       </p>
                     </div>
                     <div className="">
@@ -412,10 +413,13 @@ const Footer = () => {
                         <Icon Icon={Address} /> <p>Address</p>
                       </h4>
                       <p className="text-sm text-white max-w-[185px]">
-                        <address>
-                          Mulliner Towers, 9 Alfred Rewane Road, <br />
-                          Ikoyi, Lagos
-                        </address>
+                        Santis By Paelon 175B Moshood Olugbani Street Off Ligali
+                        Ayorinde Street Victoria Island 101233 Lagos
+                      </p>
+                      <br />
+                      <p className="text-sm text-white max-w-[185px]">
+                        Mulliner Towers, 9 Alfred Rewane Road, <br />
+                        Ikoyi, Lagos
                       </p>
                     </div>
                   </div>

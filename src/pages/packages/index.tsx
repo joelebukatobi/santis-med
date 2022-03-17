@@ -37,18 +37,6 @@ export default function Packages(props) {
   const closeModal = useCallback(() => setIsOpen(null), []);
 
   const handleSubmit = async (plan_id) => {
-    console.log(
-      name,
-      email,
-      religion,
-      marital_status,
-      address,
-      phone,
-      gender,
-      dob,
-      nationality,
-      plan_id,
-    );
     const res = await fetch(
       `${process.env.GATSBY_SANTIS_API_URL}/api/register`,
       {
