@@ -73,7 +73,7 @@ export default BenefitsSection;
 
 function BenefitCard({ title, items, l = false }) {
   return (
-    <div className=" flex items-center justify-center relative file:px-7 py-9 bg-santis-pink rounded-sm mt-4 min-h-[303px] ">
+    <div className=" relative flex items-center justify-center file:px-7 py-9 bg-santis-pink rounded-sm mt-4 min-h-[303px] ">
       <StaticImage
         className="w-[60%] absolute border-2 opacity-10 "
         alt=""

@@ -52,9 +52,9 @@ const HeroSection = () => {
         <Container>
           <div className="flex flex-wrap justify-center mx-auto -translate-y-28 ">
             <div className="flex max-w-[500px] overflow-hidden  ">
-              <div className="w-full px-16 text-white bg-santis-purple shrink-0">
+              <div className="relative w-full px-16 text-white bg-santis-purple shrink-0">
                 <StaticImage
-                  className="h-full absolute top-0 opacity-10"
+                  className="absolute h-full top-0 opacity-10"
                   alt=""
                   src="../assets/santis-logo-two.svg"
                 />
