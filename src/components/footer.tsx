@@ -239,9 +239,9 @@ const Footer = () => {
             src="../assets/lady.png"
             objectFit="cover"
           />
-          <SantisLogo className="max-w-[204px] text-white" />
+          {/* <SantisLogo className="max-w-[204px] text-white" /> */}
         </div>
-        <div className="p-6 grid gap-6  content-center -order-1 md:order-1 flex-1 h-screen max-h-[1400px]">
+        <div className="p-6 grid gap-6  content-center sm:-mt-20 items-center -order-1 md:order-1 flex-1 h-screen max-h-[1400px]">
           <div className="max-w-[550px] flex mx-auto flex-col gap-5">
             <h2 className="text-3xl">
               <span className="text-santis-purple">A Private & Secure</span>
