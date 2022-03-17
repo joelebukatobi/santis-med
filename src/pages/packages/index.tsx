@@ -167,17 +167,16 @@ export default function Packages(props) {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <div className="inline-block w-full max-w-2xl p-6 my-8 overflow-hidden text-left align-middle transition-all transform shadow-xl bg-opacity-100 bg-[#fff] rounded-2xl">
+              <div className="inline-block w-full max-w-2xl p-2 sm:p-6 my-8 overflow-hidden text-left align-middle transition-all transform shadow-xl bg-opacity-100 bg-[#fff] rounded-lg sm:rounded-2xl pb-4">
                 <Dialog.Title
                   as="h3"
-                  className="text-lg font-medium leading-6 text-gray-900"
+                  className="text-[12px] sm:text-lg pt-2 font-medium leading-6 text-gray-900 "
                 >
                   Registration Form -{' '}
                   {isOpen && props.data.allPackagesJson.nodes[isOpen.i].name}
-                  {/* {console.log(props.data.allPackagesJson.nodes[isOpen.i])} */}
                   <div></div>
                 </Dialog.Title>
-                <hr className="my-4" />
+                <hr className="mb-4 mt-2" />
                 <form
                   onSubmit={(e) => {
                     e.preventDefault();
@@ -185,7 +184,7 @@ export default function Packages(props) {
                       isOpen && props.data.allPackagesJson.nodes[isOpen.i].name,
                     );
                   }}
-                  className="grid gap-6 mt-2 "
+                  className="flex flex-col mt-2 w-[100%]"
                 >
                   <Input
                     required
@@ -196,7 +195,7 @@ export default function Packages(props) {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                   />
-                  <div className="flex justify-between">
+                  <div className="flex justify-between w-[100%] ">
                     <Input
                       required
                       type="date"
@@ -233,7 +232,7 @@ export default function Packages(props) {
                     value={nationality}
                     onChange={(e) => setNationality(e.target.value)}
                   />
-                  <div className="flex justify-between">
+                  <div className="flex justify-between w-[100%]">
                     <Input
                       required
                       type="select"
@@ -278,13 +277,13 @@ export default function Packages(props) {
                     value={address}
                     onChange={(e) => setAddress(e.target.value)}
                   />
-                  <div className="flex justify-between">
+                  <div className="flex justify-between w-[100%]">
                     <Input
                       required
                       type="tel"
                       label="Phone Number"
                       placeholder="Enter your Phone Number"
-                      id="ehoneNumberPackage"
+                      id="phoneNumberPackage"
                       className="w-[48%]"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}

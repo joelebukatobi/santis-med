@@ -73,13 +73,13 @@ export default BenefitsSection;
 
 function BenefitCard({ title, items, l = false }) {
   return (
-    <div className=" relative flex items-center justify-center file:px-7 py-9 bg-santis-pink rounded-sm mt-4 min-h-[303px] ">
+    <div className=" !relative flex items-center justify-center file:px-7 py-9 bg-santis-pink rounded-sm mt-4 min-h-[303px] ">
       <StaticImage
-        className="absolute w-[50%] border-2 opacity-10 "
+        className="!absolute w-[50%] border-2 opacity-10 "
         alt=""
         src="../assets/santis-logo-three.png"
       />
-      <div className="relative z-10 p-6">
+      <div className="!relative z-10 p-6">
         <h3 className="my-4 text-xl font-bold text-black">{title}</h3>
         <ul className="">
           {items.map((item: string, i) => (
