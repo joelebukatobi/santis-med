@@ -45,26 +45,43 @@ function Team(props) {
         </div>
         <div className="container px-8 py-16 mx-auto">
           <div className="grid gap-6 sm:grid-cols-2 md:gap-14 md:grid-cols-4 text-santis-purple">
-            {props.data.allTeam.edges
-              // .filter(
-              //   ({ node: { is_management } }) => is_management === currentRole,
-              // )
-              .map(({ node }) => (
-                <div className="grid" key={node.id}>
-                  <img src={node.image} alt="" />
-                  <div className="">
-                    <h3 className="my-4 font-bold">{node.name}</h3>
-                    <small>{node.title} &nbsp;</small>
-                    <p>{node.suffix}</p>
+            {props.data.allTeam.edges.map(({ node }) => (
+              <>
+                {node.is_management === 1 && currentRole === 'management' && (
+                  <div className="grid" key={node.id}>
+                    <img src={node.image} alt="" />
+                    <div className="">
+                      <h3 className="my-4 font-bold">{node.name}</h3>
+                      <small>{node.title} &nbsp;</small>
+                      <p>{node.suffix || <br />}</p>
+                    </div>
+                    <Link
+                      to={`/team/${node.id}`}
+                      className="inline-flex items-center justify-center w-full py-4 mt-2 bg-white border text-santis-purple border-santis-purple"
+                    >
+                      View Full Profile
+                    </Link>
                   </div>
-                  <Link
-                    to={`/team/${node.id}`}
-                    className="inline-flex items-center justify-center w-full py-4 mt-2 bg-white border text-santis-purple border-santis-purple"
-                  >
-                    View Full Profile
-                  </Link>
-                </div>
-              ))}
+                )}
+
+                {node.is_medical === 1 && currentRole === 'medical' && (
+                  <div>
+                    <img src={node.image} alt="" />
+                    <div className="">
+                      <h3 className="my-4 font-bold">{node.name}</h3>
+                      <small>{node.title} </small>
+                      <p>{node.suffix || <br />} </p>
+                    </div>
+                    <Link
+                      to={`/team/${node.id}`}
+                      className="inline-flex items-center justify-center w-full py-4 mt-2 bg-white border text-santis-purple border-santis-purple"
+                    >
+                      View Full Profile
+                    </Link>
+                  </div>
+                )}
+              </>
+            ))}
           </div>
         </div>
 
