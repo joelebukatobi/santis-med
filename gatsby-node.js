@@ -16,6 +16,49 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
+// exports.sourceNodes = async ({ actions }) => {
+//   // console.log('Hello World');
+//   const { createNode } = actions;
+//   const aboutUs = await fetch(
+//     `${process.env.GATSBY_SANTIS_API_URL}/api/post/about-us`,
+//   );
+//   const res = await aboutUs.json();
+//   Object.keys(res.data).map((about, i) => {
+//     const userNode = {
+//       id: `${i}`,
+//       // createNodeId(`PAGE-${about.id}`),
+//       parent: `__SOURCE__`,
+//       internal: {
+//         type: `About`,
+//         // name of the graphQL query --> allRandomUser {}
+//         // contentDigest will be added just after
+//         // but it is required
+//       },
+//       children: [],
+//       // Other fields that you want to query with graphQl
+//       author_id: about.author_id,
+//       category_id: about.category_id,
+//       title: about.title,
+//       excerpt: about.excerpt,
+//       body: about.body,
+//       slug: about.slug,
+//       image: about.image,
+//     };
+//     // Get content digest of node. (Required field)
+//     const contentDigest = crypto
+//       .createHash(`md5`)
+//       .update(JSON.stringify(userNode))
+//       .digest(`hex`);
+//     // add it to userNode
+//     userNode.internal.contentDigest = contentDigest;
+
+//     // Create node with the gatsby createNode() API
+//     createNode(userNode);
+
+//     console.log(userNode);
+//   });
+// };
+
 exports.sourceNodes = async ({ actions, createNodeId }) => {
   // console.log('Hello World');
   const { createNode } = actions;
@@ -56,7 +99,6 @@ exports.sourceNodes = async ({ actions, createNodeId }) => {
   });
 };
 
-// called after sourceNodes
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
   return new Promise((resolve, reject) => {

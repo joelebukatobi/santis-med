@@ -2,6 +2,7 @@ import Layout from '@/components/layout';
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import FinalCall from '@/components/final-call';
+import { graphql, Link } from 'gatsby';
 
 function About() {
   return (
@@ -103,5 +104,23 @@ function About() {
     </Layout>
   );
 }
+
+// export const query = graphql`
+//   query AboutQuery {
+//     allAbout {
+//       edges {
+//         node {
+//           author_id
+//           category_id
+//           title
+//           excerpt
+//           body
+//           slug
+//           image
+//         }
+//       }
+//     }
+//   }
+// `;
 
 export default About;

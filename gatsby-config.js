@@ -2,41 +2,6 @@
 //   path: `.env.${process.env.NODE_ENV}`,
 // });
 
-// module.exports = {
-//   plugins: [
-//     {
-//       resolve: `gatsby-source-custom-api`,
-//       options: {
-//         url: 'https://santis-backend.herokuapp.com/api/team-members',
-//         imageKeys: ['images'],
-//         rootKey: 'teamMember',
-//         schemas: {
-//           teamMember: `
-//           id: id
-//           name: name
-//           title: title
-//           suffix: suffix
-//           is_management: is_management
-//           is_medical: is_medical
-//           about: about
-//           created_at: created_at
-//           updated_at: created_at
-//           `,
-//           id: `id: Int`,
-//           name: `name: String`,
-//           title: `title: String`,
-//           suffix: `suffix: String`,
-//           is_management: `is_management: Int`,
-//           is_medical: `is_medical: Int`,
-//           about: `about: String`,
-//           created_at: `created_at: String`,
-//           updated_at: `updated_at: String`,
-//         },
-//       },
-//     },
-//   ],
-// };
-
 module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -45,7 +10,14 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-transformer-json`,
-
+    // {
+    //   resolve: 'gatsby-source-graphql',
+    //   options: {
+    //     typeName: 'About',
+    //     fieldName: 'about',
+    //     url: 'https://swapi-graphql.netlify.app/.netlify/functions/index',
+    //   },
+    // },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

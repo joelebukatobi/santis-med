@@ -169,7 +169,8 @@ export default function Packages(props) {
                   onSubmit={(e) => {
                     e.preventDefault();
                     handleSubmit(
-                      isOpen && props.data.allPackagesJson.nodes[isOpen.i].name,
+                      isOpen &&
+                        props.data.allPackagesJson.nodes[isOpen.i].plan_id,
                     );
                   }}
                   className="flex flex-col mt-2 w-[100%]"
@@ -287,7 +288,6 @@ export default function Packages(props) {
                       onChange={(e) => setEmail(e.target.value)}
                     />
                   </div>
-
                   <button
                     type="submit"
                     className="py-3 text-white col-span-full bg-santis-purple"
@@ -466,6 +466,7 @@ export const query = graphql`
       nodes {
         id
         name
+        plan_id
         benefits {
           Features {
             Dedicated_client_Coordinator_Manager
