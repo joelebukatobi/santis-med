@@ -1,6 +1,6 @@
-// require('dotenv').config({
-//   path: `.env.${process.env.NODE_ENV}`,
-// });
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 
 module.exports = {
   plugins: [
@@ -10,14 +10,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-transformer-json`,
-    // {
-    //   resolve: 'gatsby-source-graphql',
-    //   options: {
-    //     typeName: 'About',
-    //     fieldName: 'about',
-    //     url: 'https://swapi-graphql.netlify.app/.netlify/functions/index',
-    //   },
-    // },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

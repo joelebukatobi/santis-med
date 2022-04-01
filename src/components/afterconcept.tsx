@@ -14,7 +14,7 @@ function Afterconcept() {
         <StaticImage
           className="!absolute top-0 bottom-0 left-0 right-0 -z-10"
           alt=""
-          src="../assets/lady.png"
+          src="../assets/unlimited-access.jpg"
         />
         <p>
           <span className="text-xs">Unparalleled</span>
@@ -31,7 +31,7 @@ function Afterconcept() {
         <StaticImage
           className="!absolute top-0 bottom-0 left-0 right-0 -z-10"
           alt=""
-          src="../assets/bed.png"
+          src="../assets/unrivalled-access.jpg"
         />
         <p>
           <span className="text-xs">Unparalleled</span>
@@ -48,7 +48,7 @@ function Afterconcept() {
         <StaticImage
           className="!absolute top-0 bottom-0 left-0 right-0 -z-10"
           alt=""
-          src="../assets/discuss.png"
+          src="../assets/unmatched-experience.jpg"
         />
         <p>
           <span className="text-xs">Unmatched</span>

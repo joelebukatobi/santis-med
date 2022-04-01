@@ -28,7 +28,7 @@ const HeroSection = () => {
         <StaticImage
           className="!absolute top-0 bottom-0 left-0 right-0 -z-10"
           alt=""
-          src="../assets/hero.jpg"
+          src="../assets/hero-image.jpg"
         />
         <Container className="px-6 md:px-10">
           <div className="flex flex-col justify-center text-white">
@@ -115,7 +115,7 @@ const HeroSection = () => {
                 <StaticImage
                   className="w-full h-full"
                   alt=""
-                  src="../assets/lady.png"
+                  src="../assets/slider-one.jpg"
                 />
               </div>
 
@@ -123,7 +123,7 @@ const HeroSection = () => {
                 <StaticImage
                   className="w-full h-full"
                   alt=""
-                  src="../assets/lady.png"
+                  src="../assets/slider-two.jpg"
                 />
               </div>
 
@@ -131,7 +131,7 @@ const HeroSection = () => {
                 <StaticImage
                   className="w-full h-full"
                   alt=""
-                  src="../assets/lady.png"
+                  src="../assets/slider-three.jpg"
                 />
               </div>
             </div>
