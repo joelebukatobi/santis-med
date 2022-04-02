@@ -82,19 +82,19 @@ function About(props) {
   );
 }
 
-export const query = graphql`
-  query AboutQuery {
-    allAbout {
-      edges {
-        node {
-          author_id
-          title
-          body
-          slug
-        }
-      }
-    }
-  }
-`;
+// export const query = graphql`
+//   query AboutQuery {
+//     allAbout {
+//       edges {
+//         node {
+//           author_id
+//           title
+//           body
+//           slug
+//         }
+//       }
+//     }
+//   }
+// `;
 
 export default About;

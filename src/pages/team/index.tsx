@@ -6,6 +6,7 @@ import FinalCall from '@/components/final-call';
 import classNames from 'classnames';
 
 function Team(props) {
+  // console.log(props.data.allTeam.edges);
   const [currentRole, setRole] = useState('management');
   return (
     <Layout>
@@ -47,7 +48,7 @@ function Team(props) {
           <div className="grid gap-6 sm:grid-cols-2 md:gap-14 md:grid-cols-4 text-santis-purple">
             {props.data.allTeam.edges.map(({ node }) => (
               <>
-                {node.is_management === 1 && currentRole === 'management' && (
+                {node.is_management === '1' && currentRole === 'management' && (
                   <div className="grid" key={node.id}>
                     <img src={node.image} alt="" />
                     <div className="">
@@ -64,7 +65,7 @@ function Team(props) {
                   </div>
                 )}
 
-                {node.is_medical === 1 && currentRole === 'medical' && (
+                {node.is_medical === '1' && currentRole === 'medical' && (
                   <div>
                     <img src={node.image} alt="" />
                     <div className="">
@@ -92,7 +93,7 @@ function Team(props) {
 }
 
 export const query = graphql`
-  query TeamQuery {
+  query Query {
     allTeam {
       edges {
         node {
