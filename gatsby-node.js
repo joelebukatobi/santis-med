@@ -47,36 +47,36 @@ exports.sourceNodes = async ({ actions, createNodeId }) => {
     createNode(userNode);
   });
 
-  // const aboutUs = await fetch(
-  //   `${process.env.GATSBY_SANTIS_API_URL}/api/post/about-us`,
-  // );
+  const aboutUs = await fetch(
+    `${process.env.GATSBY_SANTIS_API_URL}/api/post/about-us`,
+  );
 
-  // const resAboutUs = await aboutUs.json();
-  // const resAbout = [resAboutUs.data];
-  // resAbout.map((about, i) => {
-  //   const userNode = {
-  //     id: `${i}`,
-  //     // id: createNodeId(`PAGE-${about.id}`),
-  //     parent: `__SOURCE__`,
-  //     internal: {
-  //       type: `About`,
-  //     },
-  //     children: [],
-  //     author_id: about.author_id,
-  //     category_id: about.category_id,
-  //     title: about.title,
-  //     excerpt: about.excerpt,
-  //     body: about.body,
-  //     slug: about.slug,
-  //     image: about.image,
-  //   };
-  //   const contentDigest = crypto
-  //     .createHash(`md5`)
-  //     .update(JSON.stringify(userNode))
-  //     .digest(`hex`);
-  //   userNode.internal.contentDigest = contentDigest;
-  //   createNode(userNode);
-  // });
+  const resAboutUs = await aboutUs.json();
+  const resAbout = [resAboutUs.data];
+  resAbout.map((about, i) => {
+    const userNode = {
+      id: `${i}`,
+      // id: createNodeId(`PAGE-${about.id}`),
+      parent: `__SOURCE__`,
+      internal: {
+        type: `About`,
+      },
+      children: [],
+      author_id: about.author_id,
+      category_id: about.category_id,
+      title: about.title,
+      excerpt: about.excerpt,
+      body: about.body,
+      slug: about.slug,
+      image: about.image,
+    };
+    const contentDigest = crypto
+      .createHash(`md5`)
+      .update(JSON.stringify(userNode))
+      .digest(`hex`);
+    userNode.internal.contentDigest = contentDigest;
+    createNode(userNode);
+  });
 };
 
 exports.createPages = ({ graphql, actions }) => {
