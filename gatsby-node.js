@@ -64,8 +64,8 @@ exports.sourceNodes = async ({ actions, createNodeId }) => {
   );
 
   const resAboutUs = await aboutUs.json();
-  // const resAbout = [resAboutUs.data];
-  console.log(resAbout);
+  const resAbout = [resAboutUs.data];
+  // console.log(resAbout);
 
   resAbout.map((about, i) => {
     const userNode = {
