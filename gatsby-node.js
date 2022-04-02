@@ -26,7 +26,7 @@ exports.sourceNodes = async ({ actions, createNodeId }) => {
   );
   const res = await teamMembers.json();
 
-  console.log(res.data);
+  // console.log(res.data);
   res.data.map((team, i) => {
     const userNode = {
       id: createNodeId(`PAGE-${team.id}`),
@@ -64,7 +64,7 @@ exports.sourceNodes = async ({ actions, createNodeId }) => {
   );
 
   const resAboutUs = await aboutUs.json();
-  const resAbout = [resAboutUs.data];
+  // const resAbout = [resAboutUs.data];
   console.log(resAbout);
 
   resAbout.map((about, i) => {
@@ -98,7 +98,7 @@ exports.sourceNodes = async ({ actions, createNodeId }) => {
 
     // Create node with the gatsby createNode() API
     createNode(userNode);
-    console.log(userNode);
+    // console.log(userNode);
   });
 };
 
