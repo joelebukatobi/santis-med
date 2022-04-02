@@ -413,8 +413,10 @@ const Footer = () => {
                         <Icon Icon={Address} /> <p>Address</p>
                       </h4>
                       <p className="text-sm text-white max-w-[185px]">
-                        Santis By Paelon 175B Moshood Olugbani Street Off Ligali
-                        Ayorinde Street Victoria Island 101233 Lagos
+                        Santis By Paelon
+                        <br />
+                        175B Moshood Olugbani Street Off Ligali Ayorinde Street
+                        Victoria Island 101233 Lagos
                       </p>
                       <br />
                       <p className="text-sm text-white max-w-[185px]">

@@ -115,7 +115,7 @@ const HeroSection = () => {
                 <StaticImage
                   className="w-full h-full"
                   alt=""
-                  src="../assets/slider-one.jpg"
+                  src="../assets/hero-image.jpg"
                 />
               </div>
 
@@ -123,7 +123,7 @@ const HeroSection = () => {
                 <StaticImage
                   className="w-full h-full"
                   alt=""
-                  src="../assets/slider-two.jpg"
+                  src="../assets/unrivalled-access.jpg"
                 />
               </div>
 

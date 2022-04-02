@@ -31,7 +31,7 @@ function Afterconcept() {
         <StaticImage
           className="!absolute top-0 bottom-0 left-0 right-0 -z-10"
           alt=""
-          src="../assets/unrivalled-access.jpg"
+          src="../assets/slider-two.jpg"
         />
         <p>
           <span className="text-xs">Unlimited</span>
