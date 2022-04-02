@@ -15,7 +15,7 @@ function Team(props) {
           <div className="container flex flex-wrap items-center justify-between w-full p-8 mx-auto text-white font-baskerville">
             <div className="flex-shrink-0 w-full max-w-md">
               <h1 className="font-bold">Meet the team</h1>
-              <p className="text-sm font-thin">
+              <p className="text-sm font-normal">
                 Our team is made up of seasoned healthcare, administrative and
                 business development professionals with a total of about 100
                 years experience in the healthcare industry
