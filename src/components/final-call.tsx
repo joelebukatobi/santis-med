@@ -13,7 +13,7 @@ function FinalCall() {
           </p>
           <p>
             Santis is a one-stop membership based premium healthcare services.
-            No insurance or corporate health system hassles,
+            No insurance or corporate health system hassles.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link
@@ -22,9 +22,11 @@ function FinalCall() {
             >
               Join Now
             </Link>
-            <button className="inline-flex items-center justify-center h-12 border border-white w-36">
-              Learn More
-            </button>
+            <Link to="/packages">
+              <button className="inline-flex items-center justify-center h-12 border border-white w-36">
+                Learn More
+              </button>
+            </Link>
           </div>
         </div>
         <StaticImage

@@ -17,7 +17,7 @@ function Afterconcept() {
           src="../assets/unlimited-access.jpg"
         />
         <p>
-          <span className="text-xs">Unparalleled</span>
+          <span className="text-xs">Unrivalled</span>
         </p>
         <h3>
           <span className="text-3xl font-bold text-santis-pink">Access</span>
@@ -34,7 +34,7 @@ function Afterconcept() {
           src="../assets/unrivalled-access.jpg"
         />
         <p>
-          <span className="text-xs">Unparalleled</span>
+          <span className="text-xs">Unlimited</span>
         </p>
         <h3>
           <span className="text-3xl font-bold text-santis-pink">Service</span>
