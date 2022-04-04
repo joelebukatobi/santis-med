@@ -251,8 +251,8 @@ const Footer = () => {
               </span>
             </h2>
             <p>
-              At SANTIS we privacy and security is our top priority, get access
-              to private medical care at your own schedule.
+              At SANTIS, privacy and security is our top priority, get access to
+              private medical care at your own schedule.
             </p>
             <Link
               to="/packages"
