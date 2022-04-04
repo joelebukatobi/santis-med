@@ -251,8 +251,8 @@ const Footer = () => {
               </span>
             </h2>
             <p>
-              At SANTIS we your privacy and security is our top priority, get
-              access to private medical care at your own schedule.
+              At SANTIS we privacy and security is our top priority, get access
+              to private medical care at your own schedule.
             </p>
             <Link
               to="/packages"
@@ -280,7 +280,7 @@ const Footer = () => {
                   <SantisLogo className="max-w-[204px] text-santis-gold" />
                   <p className="text-white">
                     Santis is a one-stop membership based premium healthcare
-                    services. No insurance or corporate health system hassles,
+                    services. No insurance or corporate health system hassles.
                   </p>
                   <div className="">
                     <div className="flex gap-8">
@@ -403,7 +403,7 @@ const Footer = () => {
                       </h4>
                       <p className="text-white flex flex-col">
                         <a href="mailto:admin@santimed.com">
-                          hello@santimed.com
+                          info@santimed.com
                         </a>
                         <a href="https://santismed.com">www.santismed.com</a>
                       </p>

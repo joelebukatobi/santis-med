@@ -13,9 +13,9 @@ function ConceptSection() {
           <p className="text-lg max-w-[1000px]">
             Beavers are ecological engineers and keystone players in an
             ecosystem. They provide essential services that allow others to
-            thrive At Santis, we offer beaver services to our clients by
+            thrive. At Santis, we offer beaver services to our clients by
             providing premium concierge services and navigating the complex
-            healthcare industrygiving our clients peace of mind.
+            healthcare industry giving our clients peace of mind.
           </p>
         </div>
 
