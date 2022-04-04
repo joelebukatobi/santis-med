@@ -6,7 +6,6 @@ import FinalCall from '@/components/final-call';
 import classNames from 'classnames';
 
 function Team(props) {
-  // console.log(props.data.allTeam.edges);
   const [currentRole, setRole] = useState('management');
   return (
     <Layout>
