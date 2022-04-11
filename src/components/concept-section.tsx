@@ -48,7 +48,7 @@ function ConceptSection() {
             objectFit="contain"
             className="flex-shrink-0 w-40"
             alt=""
-            src="../assets/safe_care.png"
+            src="../assets/solice.jpeg"
           />
         </div>
       </div>
