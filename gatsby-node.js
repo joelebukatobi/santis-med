@@ -38,6 +38,7 @@ exports.sourceNodes = async ({ actions, createNodeId }) => {
       title: team.title,
       is_management: team.is_management,
       is_medical: team.is_medical,
+      sort_by: team.sort_by,
     };
     const contentDigest = crypto
       .createHash(`md5`)
