@@ -66,7 +66,7 @@ function Team(props) {
                 )}
 
                 {node.is_medical === '1' && currentRole === 'medical' && (
-                  <div>
+                  <div className="grid" key={node.id}>
                     <img src={node.image} alt="" />
                     <div className="">
                       <h3 className="my-4 font-bold">{node.name}</h3>

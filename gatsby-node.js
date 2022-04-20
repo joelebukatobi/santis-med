@@ -19,6 +19,7 @@ require('dotenv').config({
 exports.sourceNodes = async ({ actions, createNodeId }) => {
   const { createNode } = actions;
 
+  // Team Members
   const teamMembers = await fetch(
     `${process.env.GATSBY_SANTIS_API_URL}/api/team-members`,
   );
@@ -48,10 +49,10 @@ exports.sourceNodes = async ({ actions, createNodeId }) => {
     createNode(userNode);
   });
 
+  // About Us
   const aboutUs = await fetch(
     `${process.env.GATSBY_SANTIS_API_URL}/api/post/about-us`,
   );
-
   const resAboutUs = await aboutUs.json();
   const resAbout = [resAboutUs.data];
   resAbout.map((about, i) => {
@@ -70,6 +71,30 @@ exports.sourceNodes = async ({ actions, createNodeId }) => {
       body: about.body,
       slug: about.slug,
       image: about.image,
+    };
+    const contentDigest = crypto
+      .createHash(`md5`)
+      .update(JSON.stringify(userNode))
+      .digest(`hex`);
+    userNode.internal.contentDigest = contentDigest;
+    createNode(userNode);
+  });
+
+  // Packages
+  const packages = await fetch(
+    `${process.env.GATSBY_SANTIS_API_URL}/api/plans`,
+  );
+  const package = await packages.json();
+  package.plans.map((plan, i) => {
+    const userNode = {
+      id: `${i}`,
+      parent: `__SOURCE__`,
+      internal: {
+        type: `Plan`,
+      },
+      children: [],
+      name: plan.name,
+      options: plan.options,
     };
     const contentDigest = crypto
       .createHash(`md5`)

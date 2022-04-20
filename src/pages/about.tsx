@@ -10,7 +10,7 @@ function About(props) {
       <div className="">
         <div className="h-28 bg-santis-purple"></div>
         <div className="h-20 bg-[#0A1829] flex w-full justify-center items-center text-white">
-          <h1>{props.data.allAbout.edges[0].node.title}</h1>
+          <h1>About Us</h1>
         </div>
         <StaticImage
           className="w-full h-[306px] md:h-[408px]"
@@ -82,19 +82,19 @@ function About(props) {
   );
 }
 
-export const query = graphql`
-  query AboutQuery {
-    allAbout {
-      edges {
-        node {
-          author_id
-          title
-          body
-          slug
-        }
-      }
-    }
-  }
-`;
+// export const query = graphql`
+//   query AboutQuery {
+//     allAbout {
+//       edges {
+//         node {
+//           author_id
+//           title
+//           body
+//           slug
+//         }
+//       }
+//     }
+//   }
+// `;
 
 export default About;
