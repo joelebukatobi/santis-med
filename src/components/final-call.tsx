@@ -32,7 +32,7 @@ function FinalCall() {
         <StaticImage
           className="right-0 md:absolute"
           alt=""
-          src="../assets/cards.png"
+          src="../assets/cards-two.png"
         />
       </div>
     </div>

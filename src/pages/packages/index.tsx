@@ -73,7 +73,6 @@ export default function Packages(props) {
   const colors = ['#CC8434', '#0A1829'];
   const bgColors = ['#CC84340D', '#0A18290D'];
 
-  console.log(props.data.allPlan.edges[0].node.options);
   return (
     <Layout>
       <div className="">
@@ -119,18 +118,18 @@ export default function Packages(props) {
                   style={{ color: colors[i], backgroundColor: bgColors[i] }}
                   className="text-center p-4"
                 >
-                  <h4 className="font-bold text-[24px]">{node.name} PLAN</h4>
-                  <div className="pt-2 pb-2 font-baskerville font-medium">
+                  <h4 className="font-bold text-[24px]">{node.name}</h4>
+                  {/* <div className="pt-2 pb-2 font-baskerville font-medium">
                     <h3 className="text-[12px] normal-case">
                       KILIMANJARO
                       <span className="normal-case"> (Minimum of 4)</span>
                     </h3>
                     <h5 className="text-[8px]">10% DISCOUNT ON GROUP TOTAL</h5>
-                  </div>
-                  <div>
+                  </div> */}
+                  {/* <div>
                     <h3 className="text-[12px]">BEAVER (FEE FOR SERVICE)</h3>
                     <h5 className="text-[8px] ">20% OF THE TOTAL CARE</h5>
-                  </div>
+                  </div> */}
                 </div>
 
                 <ul className="p-4">
