@@ -60,14 +60,6 @@ const FOOTER_LINKS = [
     heading: 'Packages',
     links: [
       {
-        label: 'Aspen',
-        href: '/packages',
-      },
-      {
-        label: 'Olympus',
-        href: '/packages',
-      },
-      {
         label: 'Everest',
         href: '/packages',
       },

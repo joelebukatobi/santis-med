@@ -62,11 +62,9 @@ const HeroSection = () => {
                   Welcome to santis
                 </h2>
                 <p className="pb-16 relative z-2">
-                  We recognize that navigating the health care system inside and
-                  indeed outside Nigeria can be confusing and intimidating. We
-                  walk and work with you to quickly and conveniently place you
-                  before the appropriate top physicians inside and outside
-                  Nigeria.
+                  SANTIS is a luxury membership based medical concierge service.
+                  At Santis our top priority is ensuring that you get the care
+                  you need in the most comfortable & seamless way.
                 </p>
                 {/* <div className="absolute top-0 -z-1 w-[300px] border-2 border-red-600">
                   
@@ -110,14 +108,14 @@ const HeroSection = () => {
                   </button>
                 )}
               </div>
-
+              {/* 
               <div className="h-[380px] keen-slider__slide shrink-0 w-[500px]">
                 <StaticImage
                   className="w-full h-full"
                   alt=""
-                  src="../assets/hero-image.jpg"
+                  src="../assets/slider-four.jpg"
                 />
-              </div>
+              </div> */}
 
               <div className="h-[380px] keen-slider__slide shrink-0 w-[500px]">
                 <StaticImage

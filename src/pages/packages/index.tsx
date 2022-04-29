@@ -43,6 +43,7 @@ export default function Packages(props) {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          Accept: 'application/json',
         },
         body: JSON.stringify({
           name: name,
@@ -59,7 +60,6 @@ export default function Packages(props) {
       },
     );
     const data = await res.json();
-
     console.log(data);
 
     if (data.status === 'success') {
@@ -124,19 +124,7 @@ export default function Packages(props) {
                   className="text-center p-4"
                 >
                   <h4 className="font-bold text-[24px]">{node.name}</h4>
-                  {/* <div className="pt-2 pb-2 font-baskerville font-medium">
-                    <h3 className="text-[12px] normal-case">
-                      KILIMANJARO
-                      <span className="normal-case"> (Minimum of 4)</span>
-                    </h3>
-                    <h5 className="text-[8px]">10% DISCOUNT ON GROUP TOTAL</h5>
-                  </div> */}
-                  {/* <div>
-                    <h3 className="text-[12px]">BEAVER (FEE FOR SERVICE)</h3>
-                    <h5 className="text-[8px] ">20% OF THE TOTAL CARE</h5>
-                  </div> */}
                 </div>
-
                 <ul className="p-4">
                   <button
                     className="block w-full py-2 text-center text-white bg-santis-purple"
@@ -260,8 +248,8 @@ export default function Packages(props) {
                         <option value="" disabled>
                           Select Plan
                         </option>
-                        <option value="0">Everest</option>
-                        <option value="1">Everest Plus</option>
+                        <option value="3">Everest</option>
+                        <option value="4">Everest Plus</option>
                       </Input>
 
                       <div className="flex justify-between w-[100%] ">
