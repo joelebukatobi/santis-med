@@ -15,6 +15,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 export default function Packages(props) {
   const [isOpen, setIsOpen] = useState(false);
+  // const [planName, setPlanName] = useState('');
 
   const [name, setName] = useState('');
   const [dob, setDob] = useState('');
@@ -25,6 +26,7 @@ export default function Packages(props) {
   const [email, setEmail] = useState('');
   const [marital_status, setMaritalStatus] = useState('');
   const [phone, setPhone] = useState('');
+  const [plan, setPlan] = useState('');
 
   const [isOpen2, setIsOpen2] = useState(false);
 
@@ -33,6 +35,12 @@ export default function Packages(props) {
   }, []);
 
   const closeModal = useCallback(() => setIsOpen(null), []);
+  // let planID;
+  // if (plan === 'Everest Plus') {
+  //   planID = '1';
+  // } else if (plan === 'Everest') {
+  //   planID = '0';
+  // }
 
   const handleSubmit = async () => {
     const res = await fetch(
@@ -52,10 +60,12 @@ export default function Packages(props) {
           gender: gender,
           dob: dob,
           nationality: nationality,
+          plan_id: plan,
         }),
       },
     );
     const data = await res.json();
+    console.log(data);
 
     if (data.status === 'success') {
       closeModal();
@@ -146,7 +156,7 @@ export default function Packages(props) {
                     <h5 className="my-2 text-[12px] font-bold  mt-6">
                       Additional Benefits (Annually)
                     </h5>
-                    {node.options.map(({ category, name, i }) => (
+                    {node.options.map(({ category, name }) => (
                       <>
                         {category === 'benefits' && (
                           <li className="mb-2 rounded font-baskerville text-[#667085] flex items-center gap-[2.4px]">
@@ -162,7 +172,7 @@ export default function Packages(props) {
                     <h5 className="my-2 text-[12px] font-bold  mt-6">
                       Additional Services
                     </h5>
-                    {node.options.map(({ category, name, i }) => (
+                    {node.options.map(({ category, name }) => (
                       <>
                         {category === 'services' && (
                           <li className="mb-2 rounded font-baskerville text-[#667085] flex items-center gap-[2.4px]">
@@ -178,7 +188,7 @@ export default function Packages(props) {
                     <h5 className="my-2 text-[12px] font-bold  mt-6">
                       Access To Positive Lifestyle
                     </h5>
-                    {node.options.map(({ category, name, i }) => (
+                    {node.options.map(({ category, name }) => (
                       <>
                         {category === 'investigations' && (
                           <li className="mb-2 rounded font-baskerville text-[#667085] flex items-center gap-[2.4px]">
@@ -191,252 +201,273 @@ export default function Packages(props) {
                   </div>
                 </ul>
               </li>
-
-              <Transition appear show={!!isOpen} as={Fragment}>
-                <Dialog
-                  as="div"
-                  className="fixed inset-0 z-50 overflow-y-auto"
-                  onClose={closeModal}
-                >
-                  <div className="min-h-screen px-4 text-center">
-                    <Transition.Child
-                      as={Fragment}
-                      enter="ease-out duration-300"
-                      enterFrom="opacity-0"
-                      enterTo="opacity-100"
-                      leave="ease-in duration-200"
-                      leaveFrom="opacity-100"
-                      leaveTo="opacity-0"
-                    >
-                      <Dialog.Overlay className="fixed inset-0  bg-[#101828] opacity-70" />
-                    </Transition.Child>
-
-                    <span
-                      className="inline-block h-screen align-middle"
-                      aria-hidden="true"
-                    >
-                      &#8203;
-                    </span>
-                    <Transition.Child
-                      as={Fragment}
-                      enter="ease-out duration-300"
-                      enterFrom="opacity-0 scale-95"
-                      enterTo="opacity-100 scale-100"
-                      leave="ease-in duration-200"
-                      leaveFrom="opacity-100 scale-100"
-                      leaveTo="opacity-0 scale-95"
-                    >
-                      <div className="inline-block w-full max-w-2xl p-2 sm:p-6 my-8 overflow-hidden text-left align-middle transition-all transform shadow-xl bg-opacity-100 bg-[#fff] rounded-lg sm:rounded-2xl pb-4">
-                        <Dialog.Title
-                          as="h3"
-                          className="text-[12px] sm:text-lg pt-2 font-medium leading-6 text-gray-900 "
-                        >
-                          Registration Form - {isOpen && node.name}
-                        </Dialog.Title>
-                        <hr className="mb-4 mt-2" />
-                        <form
-                          onSubmit={(e) => {
-                            e.preventDefault();
-                            handleSubmit();
-                          }}
-                          className="flex flex-col mt-2 w-[100%]"
-                        >
-                          <Input
-                            required
-                            type="text"
-                            label="Full Name"
-                            placeholder="Enter Your Full Name"
-                            id="fullNamePackage"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                          />
-                          <div className="flex justify-between w-[100%] ">
-                            <Input
-                              required
-                              type="date"
-                              label="Date Of Birth"
-                              id="dobPackage"
-                              className="w-[48%]"
-                              value={dob}
-                              onChange={(e) => setDob(e.target.value)}
-                            />
-                            <Input
-                              required
-                              type="select"
-                              label="Gender"
-                              placeholder="Select your gender"
-                              id="genderPackage"
-                              className="w-[48%]"
-                              value={gender}
-                              onChange={(e) => setGender(e.target.value)}
-                            >
-                              <option value="" disabled>
-                                Choose your gender
-                              </option>
-                              <option value="Male">Male</option>
-                              <option value="Female">Female</option>
-                            </Input>
-                          </div>
-                          <Input
-                            required
-                            type="text"
-                            label="Nationality"
-                            placeholder="Select Nationality"
-                            id="nationalityPackage"
-                            // className="w-[48%]"
-                            value={nationality}
-                            onChange={(e) => setNationality(e.target.value)}
-                          />
-                          <div className="flex justify-between w-[100%]">
-                            <Input
-                              required
-                              type="select"
-                              label="Religion"
-                              placeholder="Enter religion"
-                              id="religionPackage"
-                              className="w-[48%]"
-                              value={religion}
-                              onChange={(e) => setReligion(e.target.value)}
-                            >
-                              <option value="" disabled>
-                                Choose your religion
-                              </option>
-                              <option value="Christianity">Christianity</option>
-                              <option value="Islam">Islam</option>
-                            </Input>
-                            <Input
-                              required
-                              type="select"
-                              label="Marital Status"
-                              placeholder="Select Marital Status"
-                              id="maritalStatusPackage"
-                              className="w-[48%]"
-                              value={marital_status}
-                              onChange={(e) => setMaritalStatus(e.target.value)}
-                            >
-                              <option value="" disabled>
-                                Choose your Marital Status
-                              </option>
-                              <option value="Single">Single</option>
-                              <option value="Married">Married</option>
-                              <option value="Divorced">Divorced</option>
-                            </Input>
-                          </div>
-                          <Input
-                            required
-                            type="text"
-                            label="Home Address"
-                            placeholder="Enter your Home Address"
-                            id="homeAddressPackage"
-                            className="col-span-full"
-                            value={address}
-                            onChange={(e) => setAddress(e.target.value)}
-                          />
-                          <div className="flex justify-between w-[100%]">
-                            <Input
-                              required
-                              type="tel"
-                              label="Phone Number"
-                              placeholder="Enter your Phone Number"
-                              id="phoneNumberPackage"
-                              className="w-[48%]"
-                              value={phone}
-                              onChange={(e) => setPhone(e.target.value)}
-                            />
-                            <Input
-                              required
-                              type="email"
-                              label="Email Address"
-                              placeholder="Enter your Email Address"
-                              id="emailAddressPackage"
-                              className="w-[48%]"
-                              value={email}
-                              onChange={(e) => setEmail(e.target.value)}
-                            />
-                          </div>
-                          <button
-                            type="submit"
-                            className="py-3 text-white col-span-full bg-santis-purple"
-                          >
-                            Submit
-                          </button>
-                        </form>
-                      </div>
-                    </Transition.Child>
-                  </div>
-                </Dialog>
-              </Transition>
-              <Transition appear show={isOpen2} as={Fragment}>
-                <Dialog
-                  as="div"
-                  className="fixed inset-0 z-10 overflow-y-auto "
-                  onClose={closeSuccessModal}
-                >
-                  <div className="min-h-screen px-4 text-center">
-                    <Transition.Child
-                      as={Fragment}
-                      enter="ease-out duration-300"
-                      enterFrom="opacity-0"
-                      enterTo="opacity-100"
-                      leave="ease-in duration-200"
-                      leaveFrom="opacity-100"
-                      leaveTo="opacity-0"
-                    >
-                      <Dialog.Overlay className="fixed inset-0  bg-[#101828] opacity-70" />
-                    </Transition.Child>
-
-                    <span
-                      className="inline-block h-screen align-middle"
-                      aria-hidden="true"
-                    >
-                      &#8203;
-                    </span>
-                    <Transition.Child
-                      as={Fragment}
-                      enter="ease-out duration-300"
-                      enterFrom="opacity-0 scale-95"
-                      enterTo="opacity-100 scale-100"
-                      leave="ease-in duration-200"
-                      leaveFrom="opacity-100 scale-100"
-                      leaveTo="opacity-0 scale-95"
-                    >
-                      <div className="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
-                        <Dialog.Title
-                          as="h3"
-                          className="font-medium leading-6 text-center text-santis-purple"
-                        >
-                          <Success className="max-w-[84px] mx-auto text-santis-gold mb-4" />
-                          <span className="text-[30px] text-[#0A1829] font-medium">
-                            Success
-                          </span>
-                        </Dialog.Title>
-                        <div className="my-4 flex justify-center text-center">
-                          <p className="text-sm  w-[75%] text-gray-500 ">
-                            Your application has been successfully submitted.
-                            Click below to continue.
-                          </p>
-                        </div>
-                        <div className="mt-6 text-center">
-                          <button
-                            type="button"
-                            className="inline-flex justify-center py-2 text-sm font-medium text-[#fff] bg-santis-purple border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 w-[75%] focus-visible:ring-offset-2 focus-visible:ring-blue-500"
-                            onClick={closeSuccessModal}
-                          >
-                            Continue
-                          </button>
-                        </div>
-
-                        <div className="flex my-4 justify-center items-center">
-                          <Arrow />
-                          <p className="ml-2 text-gray-500">Back to Homepage</p>
-                        </div>
-                      </div>
-                    </Transition.Child>
-                  </div>
-                </Dialog>
-              </Transition>
             </>
           ))}
+
+          <Transition appear show={!!isOpen} as={Fragment}>
+            <Dialog
+              as="div"
+              className="fixed inset-0 z-50 overflow-y-auto"
+              onClose={closeModal}
+            >
+              <div className="min-h-screen px-4 text-center">
+                <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0"
+                  enterTo="opacity-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100"
+                  leaveTo="opacity-0"
+                >
+                  <Dialog.Overlay className="fixed inset-0  bg-[#101828] opacity-70" />
+                </Transition.Child>
+
+                <span
+                  className="inline-block h-screen align-middle"
+                  aria-hidden="true"
+                >
+                  &#8203;
+                </span>
+                <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <div className="inline-block w-full max-w-2xl p-2 sm:p-6 my-8 overflow-hidden text-left align-middle transition-all transform shadow-xl bg-opacity-100 bg-[#fff] rounded-lg sm:rounded-2xl pb-4">
+                    <Dialog.Title
+                      as="h3"
+                      className="text-[12px] sm:text-lg pt-2 font-medium leading-6 text-gray-900 "
+                    >
+                      Registration Form
+                    </Dialog.Title>
+                    <hr className="mb-4 mt-2" />
+                    <form
+                      onSubmit={(e) => {
+                        e.preventDefault();
+                        handleSubmit();
+                      }}
+                      className="flex flex-col mt-2 w-[100%]"
+                    >
+                      <Input
+                        required
+                        type="select"
+                        label="Santis Plan"
+                        placeholder="Select Plan"
+                        id="maritalStatusPackage"
+                        value={plan}
+                        onChange={(e) => setPlan(e.target.value)}
+                      >
+                        <option value="" disabled>
+                          Select Plan
+                        </option>
+                        <option value="0">Everest</option>
+                        <option value="1">Everest Plus</option>
+                      </Input>
+
+                      <div className="flex justify-between w-[100%] ">
+                        <Input
+                          required
+                          type="text"
+                          label="Full Name"
+                          placeholder="Enter Your Full Name"
+                          id="fullNamePackage"
+                          value={name}
+                          className="w-[48%]"
+                          onChange={(e) => setName(e.target.value)}
+                        />
+                        <Input
+                          required
+                          type="select"
+                          label="Gender"
+                          placeholder="Select your gender"
+                          id="genderPackage"
+                          className="w-[48%]"
+                          value={gender}
+                          onChange={(e) => setGender(e.target.value)}
+                        >
+                          <option value="" disabled>
+                            Choose your gender
+                          </option>
+                          <option value="Male">Male</option>
+                          <option value="Female">Female</option>
+                        </Input>
+                      </div>
+
+                      <div className="flex justify-between w-[100%]">
+                        <Input
+                          required
+                          type="date"
+                          label="Date Of Birth"
+                          id="dobPackage"
+                          className="w-[48%]"
+                          value={dob}
+                          onChange={(e) => setDob(e.target.value)}
+                        />
+                        <Input
+                          required
+                          type="text"
+                          label="Nationality"
+                          placeholder="Select Nationality"
+                          id="nationalityPackage"
+                          // className="w-[48%]"
+                          value={nationality}
+                          className="w-[48%]"
+                          onChange={(e) => setNationality(e.target.value)}
+                        />
+                      </div>
+                      <div className="flex justify-between w-[100%]">
+                        <Input
+                          required
+                          type="select"
+                          label="Religion"
+                          placeholder="Enter religion"
+                          id="religionPackage"
+                          className="w-[48%]"
+                          value={religion}
+                          onChange={(e) => setReligion(e.target.value)}
+                        >
+                          <option value="" disabled>
+                            Choose your religion
+                          </option>
+                          <option value="Christianity">Christianity</option>
+                          <option value="Islam">Islam</option>
+                        </Input>
+                        <Input
+                          required
+                          type="select"
+                          label="Marital Status"
+                          placeholder="Select Marital Status"
+                          id="maritalStatusPackage"
+                          className="w-[48%]"
+                          value={marital_status}
+                          onChange={(e) => setMaritalStatus(e.target.value)}
+                        >
+                          <option value="" disabled>
+                            Choose your Marital Status
+                          </option>
+                          <option value="Single">Single</option>
+                          <option value="Married">Married</option>
+                          <option value="Divorced">Divorced</option>
+                        </Input>
+                      </div>
+                      <Input
+                        required
+                        type="text"
+                        label="Home Address"
+                        placeholder="Enter your Home Address"
+                        id="homeAddressPackage"
+                        className="col-span-full"
+                        value={address}
+                        onChange={(e) => setAddress(e.target.value)}
+                      />
+                      <div className="flex justify-between w-[100%]">
+                        <Input
+                          required
+                          type="tel"
+                          label="Phone Number"
+                          placeholder="Enter your Phone Number"
+                          id="phoneNumberPackage"
+                          className="w-[48%]"
+                          value={phone}
+                          onChange={(e) => setPhone(e.target.value)}
+                        />
+                        <Input
+                          required
+                          type="email"
+                          label="Email Address"
+                          placeholder="Enter your Email Address"
+                          id="emailAddressPackage"
+                          className="w-[48%]"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                        />
+                      </div>
+                      <button
+                        type="submit"
+                        className="py-3 text-white col-span-full bg-santis-purple"
+                      >
+                        Submit
+                      </button>
+                    </form>
+                  </div>
+                </Transition.Child>
+              </div>
+            </Dialog>
+          </Transition>
+          <Transition appear show={isOpen2} as={Fragment}>
+            <Dialog
+              as="div"
+              className="fixed inset-0 z-10 overflow-y-auto "
+              onClose={closeSuccessModal}
+            >
+              <div className="min-h-screen px-4 text-center">
+                <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0"
+                  enterTo="opacity-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100"
+                  leaveTo="opacity-0"
+                >
+                  <Dialog.Overlay className="fixed inset-0  bg-[#101828] opacity-70" />
+                </Transition.Child>
+
+                <span
+                  className="inline-block h-screen align-middle"
+                  aria-hidden="true"
+                >
+                  &#8203;
+                </span>
+                <Transition.Child
+                  as={Fragment}
+                  enter="ease-out duration-300"
+                  enterFrom="opacity-0 scale-95"
+                  enterTo="opacity-100 scale-100"
+                  leave="ease-in duration-200"
+                  leaveFrom="opacity-100 scale-100"
+                  leaveTo="opacity-0 scale-95"
+                >
+                  <div className="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
+                    <Dialog.Title
+                      as="h3"
+                      className="font-medium leading-6 text-center text-santis-purple"
+                    >
+                      <Success className="max-w-[84px] mx-auto text-santis-gold mb-4" />
+                      <span className="text-[30px] text-[#0A1829] font-medium">
+                        Success
+                      </span>
+                    </Dialog.Title>
+                    <div className="my-4 flex justify-center text-center">
+                      <p className="text-sm  w-[75%] text-gray-500 ">
+                        Your application has been successfully submitted. Click
+                        below to continue.
+                      </p>
+                    </div>
+                    <div className="mt-6 text-center">
+                      <button
+                        type="button"
+                        className="inline-flex justify-center py-2 text-sm font-medium text-[#fff] bg-santis-purple border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 w-[75%] focus-visible:ring-offset-2 focus-visible:ring-blue-500"
+                        onClick={closeSuccessModal}
+                      >
+                        Continue
+                      </button>
+                    </div>
+
+                    <div className="flex my-4 justify-center items-center">
+                      <Arrow />
+                      <p className="ml-2 text-gray-500">Back to Homepage</p>
+                    </div>
+                  </div>
+                </Transition.Child>
+              </div>
+            </Dialog>
+          </Transition>
         </ul>
       </div>
     </Layout>
