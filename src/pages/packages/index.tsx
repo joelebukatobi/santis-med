@@ -35,12 +35,6 @@ export default function Packages(props) {
   }, []);
 
   const closeModal = useCallback(() => setIsOpen(null), []);
-  // let planID;
-  // if (plan === 'Everest Plus') {
-  //   planID = '1';
-  // } else if (plan === 'Everest') {
-  //   planID = '0';
-  // }
 
   const handleSubmit = async () => {
     const res = await fetch(
@@ -65,6 +59,7 @@ export default function Packages(props) {
       },
     );
     const data = await res.json();
+
     console.log(data);
 
     if (data.status === 'success') {
